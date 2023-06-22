@@ -1,0 +1,74 @@
+
+### BUILD ###
+
+export TI_SDK_PATH=/opt/ti-processor-sdk-linux-rt-am57xx-evm-05.02.00.10
+
+TOOL_PREFIX := arm-linux-gnueabihf-
+#TOOL_PREFIX := 
+CC := $(TOOL_PREFIX)gcc
+LD := $(TOOL_PREFIX)ld
+STRIP := $(TOOL_PREFIX)strip
+
+#LINUX_DEVKIT_PATH := $(TI_SDK_PATH)/linux-devkit
+
+CC := $(TOOL_PREFIX)gcc
+CPP := $(TOOL_PREFIX)cpp
+LD := $(TOOL_PREFIX)ld
+STRIP := $(TOOL_PREFIX)strip
+
+DEST_DIR=/nfs_resource/
+
+#CC=gcc
+#CPP=g++
+
+#CFLAGS= -Wall -O2 -g -D_REENTRANT -fPIC
+#CFLAGS= -Wall -O2 -g -D_REENTRANT -fPIC -DDEBUG
+#CFLAGS= -Wall -O2 -fno-defer-pop -g -D_REENTRANT -fPIC -DDEBUG
+CFLAGS= -Wall -g -D_REENTRANT -fPIC -DDEBUG
+#CFLAGS= -Wall -g -D_REENTRANT -fPIC -mtune=generic
+#CFLAGS= -Wall -g -D_REENTRANT -fPIC -m486
+#CFLAGS= -Wall -g -D_REENTRANT -fPIC
+CPPFLAGS=$(CFLAGS)
+
+LIB_OBJS=main.o Acq.o
+
+all: OBJECT ACQ_FW
+#	mb_read mb_analyzer mb_responder
+#     example example2 
+
+clean:
+	rm -f ACQ_FW.a main.o $(LIB_OBJS)
+
+### C Library and archive
+
+#%.o : %.c 
+#	@echo $@
+#	@$(CC) $(CFLAGS) -g -o "$@" "$<" -I. -L. -lmodbus -lpthread
+
+print: $(wildcard *.c)
+	ls -la  $?
+
+OBJECT:
+	@echo Building $@
+	@$(CC) $(CFLAGS) -c "Acq.c" -I. -L. -lmodbus -lpthread
+	@$(CC) $(CFLAGS) -c main.c -I. -L. -lmodbus -lpthread
+
+#Acq.o : Acq.c
+#	@echo Building $@
+#	@$(CC) $(CFLAGS) -g -o "$@" "$<" -I. -L. -lmodbus -lpthread
+
+ACQ_FW: main.o Acq.o
+#	$(CC) -c Acq.c main.c
+	$(CC) -o $(DEST_DIR)$@ "main.o" "Acq.o" -I. -L. -lmodbus -lpthread
+
+# a shared library
+# if you want this, copy the library to some system-wide library directory and run ldconfig
+#libmodbus.so: $(LIB_OBJS)
+#	$(CC) $@ -o $@ $(LIB_OBJS)
+
+# a "static" library, also known as an "archive"
+#libmodbus.a: $(LIB_OBJS)
+#	ar cruv $@ $(LIB_OBJS)
+#	ranlib $@
+
+# the rest gets taken care of by the implicit rule of .c.o
