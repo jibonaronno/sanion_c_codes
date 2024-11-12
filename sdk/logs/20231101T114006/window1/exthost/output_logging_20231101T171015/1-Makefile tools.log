@@ -1,0 +1,69 @@
+No current configuration is defined in the workspace state. Assuming 'Default'.
+No target defined in the workspace state. Assuming 'Default'.
+Dropping various extension output files at /home/taki/fork_localunit/sdk/User/workspaceStorage/c346f9018420770c7f361d444b2c496b/ms-vscode.makefile-tools
+Logging level: Normal
+Configurations cached at /home/taki/fork_localunit/sdk/User/workspaceStorage/c346f9018420770c7f361d444b2c496b/ms-vscode.makefile-tools/configurationCache.log
+No path to the makefile is defined in the settings file.
+No folder path to the makefile is defined in the settings file.
+Always pre-configure: false
+Dry-run switches: '--always-make', '--keep-going', '--print-directory'
+No current launch configuration is set in the workspace state.
+Default launch configuration: MIMode = undefined,
+                    miDebuggerPath = undefined,
+                    stopAtEntry = undefined,
+                    symbolSearchPath = undefined
+Configure on open: true
+Configure on edit: true
+Configure after command: true
+Only .PHONY targets: false
+Save before build or configure: true
+Build before launch: true
+Clear output before build: true
+Ignore directory commands: true
+compile_commands.json path: null
+Deduced command 'make ' for configuration "Default"
+Saving opened files before build.
+Generating configuration cache with command: 'make --dry-run --always-make --keep-going --print-directory'
+Writing the dry-run output: /home/taki/fork_localunit/sdk/User/workspaceStorage/c346f9018420770c7f361d444b2c496b/ms-vscode.makefile-tools/dryrun.log
+Generating dry-run elapsed time: 0.291
+Preprocessing: "/home/taki/fork_localunit/sdk/User/workspaceStorage/c346f9018420770c7f361d444b2c496b/ms-vscode.makefile-tools/dryrun.log"
+Configure succeeded.
+Configure elapsed time: 7.673
+Configuring after settings or makefile changes...
+Saving opened files before build.
+Generating configuration cache with command: 'make --dry-run --keep-going --print-directory'
+Writing the dry-run output: /home/taki/fork_localunit/sdk/User/workspaceStorage/c346f9018420770c7f361d444b2c496b/ms-vscode.makefile-tools/dryrun.log
+Generating dry-run elapsed time: 0.164
+Preprocessing: "/home/taki/fork_localunit/sdk/User/workspaceStorage/c346f9018420770c7f361d444b2c496b/ms-vscode.makefile-tools/dryrun.log"
+Configuration for file /home/taki/fork_localunit/sdk/src/sensorcomm.c was not found. Searching in the current configure temporary file index.
+Configuration for file /home/taki/fork_localunit/sdk/src/sensorcomm.c was not found. CppTools will set a default configuration.
+Preprocess elapsed time: 0
+Parsing for IntelliSense.
+Updating the CppTools IntelliSense Configuration Provider.
+Parsing dry-run output for CppTools Custom Configuration Provider.
+Parsing for IntelliSense elapsed time: 0.022
+Parsing for launch targets.
+No new new launch configurations have been detected.
+Complete list of launch targets: 
+Parsing for launch targets elapsed time: 0.001
+Generating parse content for build targets.
+Generating targets information with command: 'make all --print-data-base --no-builtin-variables --no-builtin-rules --question'
+Writing the dry-run output: /home/taki/fork_localunit/sdk/User/workspaceStorage/c346f9018420770c7f361d444b2c496b/ms-vscode.makefile-tools/targets.log
+Configuration for file /home/taki/fork_localunit/sdk/src/sensorcomm.c was not found. Searching in the current configure temporary file index.
+Configuration for file /home/taki/fork_localunit/sdk/src/sensorcomm.c was not found. CppTools will set a default configuration.
+Generating dry-run elapsed time: 0.053
+Parsing for build targets from: "/home/taki/fork_localunit/sdk/User/workspaceStorage/c346f9018420770c7f361d444b2c496b/ms-vscode.makefile-tools/targets.log"
+Found the following 2 new build targets defined in the makefile: all;clean
+Complete list of build targets: all;clean
+Parsing build targets elapsed time: 0.001
+Configure finished. The status for all the subphases that ran:
+generateParseContent: return code = 0, elapsed time = 0.164
+preprocessParseContent: return code = 0, elapsed time = 0
+parseIntelliSense: return code = 0, elapsed time = 0.022
+parseLaunch: return code = 0, elapsed time = 0.001
+dryrunTargets: return code = 1, elapsed time = 0.053
+parseTargets: return code = 0, elapsed time = 0.001
+Configure succeeded.
+Configure elapsed time: 0.328
+Configuration for file /home/taki/fork_localunit/sdk/src/Acq.c was not found. CppTools will set a default configuration.
+Configuration for file /home/taki/fork_localunit/sdk/src/tcpipprotocol.c was not found. CppTools will set a default configuration.

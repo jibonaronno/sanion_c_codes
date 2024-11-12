@@ -1,0 +1,9 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/taki/fork_localunit'
+cd /home/taki/fork_localunit/sdk && make clean && make
+cd /home/taki/fork_localunit/Debug && make clean && make all
+arm-linux-gnueabihf-strip /home/taki/fork_localunit/Debug/UR_MASTER_MPU
+sudo cp /home/taki/fork_localunit/Debug/UR_MASTER_MPU /test/URIED-TEST/
+sudo cp /home/taki/fork_localunit/Debug/UR_MASTER_MPU /sanion/HUR-IED/bsp/target-maker/apps/
+make: Leaving directory '/home/taki/fork_localunit'
+ 

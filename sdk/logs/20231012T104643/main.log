@@ -1,0 +1,49 @@
+2023-10-12 10:46:43.865 [info] update#setState idle
+2023-10-12 10:46:46.285 [error] vscode-file: Refused to load resource /snap/code/139/usr/share/code/resources/app/extensions/theme-seti/icons/seti.woff from vscode-file: protocol (original URL: vscode-file://vscode-app/snap/code/139/usr/share/code/resources/app/extensions/theme-seti/icons/seti.woff)
+2023-10-12 10:47:13.872 [info] update#setState checking for updates
+2023-10-12 10:47:13.891 [info] update#setState idle
+2023-10-12 11:47:14.205 [info] update#setState checking for updates
+2023-10-12 11:47:14.209 [info] update#setState idle
+2023-10-12 12:47:14.400 [info] update#setState checking for updates
+2023-10-12 12:47:14.401 [info] update#setState idle
+2023-10-12 13:47:14.844 [info] update#setState checking for updates
+2023-10-12 13:47:14.853 [info] update#setState idle
+2023-10-12 14:47:15.101 [info] update#setState checking for updates
+2023-10-12 14:47:15.118 [info] update#setState idle
+2023-10-12 15:47:15.586 [info] update#setState checking for updates
+2023-10-12 15:47:15.596 [info] update#setState idle
+2023-10-12 16:47:15.891 [info] update#setState checking for updates
+2023-10-12 16:47:15.894 [info] update#setState idle
+2023-10-12 17:47:15.897 [info] update#setState checking for updates
+2023-10-12 17:47:15.909 [info] update#setState idle
+2023-10-13 09:34:58.257 [info] update#setState checking for updates
+2023-10-13 09:34:58.286 [info] update#setState idle
+2023-10-13 10:34:59.147 [info] update#setState checking for updates
+2023-10-13 10:34:59.151 [info] update#setState idle
+2023-10-13 11:35:00.124 [info] update#setState checking for updates
+2023-10-13 11:35:00.137 [info] update#setState idle
+2023-10-13 13:54:06.450 [info] update#setState checking for updates
+2023-10-13 13:54:06.452 [info] update#setState idle
+2023-10-13 14:54:08.247 [info] update#setState checking for updates
+2023-10-13 14:54:08.251 [info] update#setState idle
+2023-10-13 15:54:09.246 [info] update#setState checking for updates
+2023-10-13 15:54:09.263 [info] update#setState idle
+2023-10-16 08:54:10.675 [info] update#setState checking for updates
+2023-10-16 08:54:10.678 [info] update#setState idle
+2023-10-16 09:54:10.911 [info] update#setState checking for updates
+2023-10-16 09:54:10.928 [info] update#setState idle
+2023-10-16 10:54:11.549 [info] update#setState checking for updates
+2023-10-16 10:54:11.555 [info] update#setState idle
+2023-10-16 11:54:11.960 [info] update#setState checking for updates
+2023-10-16 11:54:11.968 [info] update#setState idle
+2023-10-16 13:18:48.977 [info] update#setState checking for updates
+2023-10-16 13:18:49.002 [info] update#setState idle
+2023-10-16 14:18:48.808 [info] update#setState checking for updates
+2023-10-16 14:18:48.810 [info] update#setState idle
+2023-10-16 15:18:48.454 [info] update#setState checking for updates
+2023-10-16 15:18:48.460 [info] update#setState idle
+2023-10-16 16:18:48.301 [info] update#setState checking for updates
+2023-10-16 16:18:48.306 [info] update#setState idle
+2023-10-16 17:18:48.254 [info] update#setState checking for updates
+2023-10-16 17:18:48.260 [info] update#setState idle
+2023-10-16 17:48:53.801 [info] Extension host with pid 4787 exited with code: 0, signal: unknown.

@@ -1,0 +1,13 @@
+2023-09-13 13:15:36.714 [info] Extension host with pid 3156 started
+2023-09-13 13:15:36.715 [info] Skipping acquiring lock for /home/taki/fork_localunit/sdk/User/workspaceStorage/c346f9018420770c7f361d444b2c496b.
+2023-09-13 13:15:37.955 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-09-13 13:15:38.078 [info] ExtensionService#_doActivateExtension ms-vscode.cpptools, startup: false, activationEvent: 'onLanguage:c'
+2023-09-13 13:15:40.207 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-09-13 13:15:40.435 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-09-13 13:15:40.814 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-09-13 13:15:41.576 [info] ExtensionService#_doActivateExtension ms-vscode.makefile-tools, startup: true, activationEvent: 'workspaceContains:**/makefile,**/Makefile,**/GNUmakefile'
+2023-09-13 13:15:44.507 [info] Eager extensions activated
+2023-09-13 13:15:45.990 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-09-13 13:15:46.004 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-09-13 13:15:48.333 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2023-09-13 13:16:19.340 [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
