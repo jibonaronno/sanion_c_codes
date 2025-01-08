@@ -218,7 +218,7 @@ void CreateACQdat(U8 u8ACQNo, dsACQWaveData a_dsACQWaveData)
 
 	U8 *buffer=(char*)malloc(sizeof(a_dsACQWaveData));
 	char filename[50];
-	snprintf(filename,sizeof(filename),"/data/COMTRADE/%d_32_%04d%02d%02d%02d%02d%02d.dat",u8ACQNo,tm->tm_year+1900, tm->tm_mon+1, tm->tm_mday,tm->tm_hour, tm->tm_min, tm->tm_sec);
+	snprintf(filename,sizeof(filename),"/data/COMTRADE/EVENT/CBCM/%d_32_%04d%02d%02d%02d%02d%02d.dat",u8ACQNo,tm->tm_year+1900, tm->tm_mon+1, tm->tm_mday,tm->tm_hour, tm->tm_min, tm->tm_sec);
 	
 	
 	if (ACQcounting[u8ACQNo] == filebuffermax){

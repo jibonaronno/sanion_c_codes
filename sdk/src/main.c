@@ -65,7 +65,6 @@
 //#include "Acq.h"
 #define INTERVAL_MS 10 // Interval for usleep
 #define MINUTE_IN_MILLISECONDS 60000 // One minute in milliseconds
-
 /*!
  * @file main.c
  * Entry Point file main.c contains the main() entry point functions, Shared Memories, Global Variables, 
@@ -303,6 +302,7 @@ int RunThread(void)
 	}
 	
 	//printf("From LU 3, LLN0 Mod : %d\n",*(char*)g_p61850MappingTbl[gs32lln0idx].pvmdptr); 
+	#ifdef ISPDASYSTEM
 	printf("\n start DAU thread \n");
 	//nReturn = g_Start_Thread(&ACQ_threadID, ACQ_thread_init_attr, sbcr_acq_modbus_run, NULL);
 	nReturn = g_Start_Thread(&SUBSYSTEM_threadID, SUBSYSTEM_thread_init_attr, subsystem_thread, NULL);
@@ -311,7 +311,7 @@ int RunThread(void)
 		perror("DAU Process Thread error");
 		return -1;
 	}
-	
+	#endif
 	//printf("From LU 4, LLN0 Mod : %d\n",*(char*)g_p61850MappingTbl[gs32lln0idx].pvmdptr); 
 	printf("start 61850 thread %d\n");
 	nReturn = g_Start_Thread(&IEC61850_threadID, IEC61850_init_attr, IEC61850_ProcessMain, NULL);
@@ -366,7 +366,7 @@ int RunThread(void)
 		return -1;
 	}
 */
-
+	#ifdef ISPDASYSTEM
 	printf("start PDDAU task thread\n");
 	nReturn = g_Start_Thread(&Sensor_threadID, Sensor_init_attr, RunPDDAU, NULL);
 	if(nReturn)
@@ -374,6 +374,7 @@ int RunThread(void)
 		perror("PDDAU Process Thread error");
 		return -1;
 	}
+	#endif
 
 /*
 	if(DBM_GetSetting("DevInfo", "MPU IPAddr",(char *)au8IpAddr) == 0)
@@ -702,7 +703,7 @@ int main(void)
 	 */
 	
 	const ST_CHAR *ps8configfile = "LUConfig.json";
-
+#ifdef ISPDASYSTEM
 	if(!parseLUConfig(ps8configfile, &pdsluConfig))
 	{
         printf("Error parsing 'LUConfig.json'\n");
@@ -722,12 +723,12 @@ int main(void)
 			}
 		}
 	}
-	
+#endif
 	/******
 	 * </SEPT-9>
 	 */
 
-
+	#ifdef ISPDASYSTEM
 	for(lidxA=0;lidxA < g_p61850IfcInfo->s32leafnum;lidxA++)
 	{
 		if(strstr((char *)g_p61850MappingTbl[lidxA].ps8leafname, "GLU/"))
@@ -743,7 +744,7 @@ int main(void)
 			break;
 		}
 	}
-
+	#endif
 	//WDT_Init();
 	//initfinish = 1;
 	U16 u16WatchDogCnt = 0;

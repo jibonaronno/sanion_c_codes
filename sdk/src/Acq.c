@@ -231,7 +231,7 @@ int _ACQ::readAll(void)
  * Test function that uses some data structures from lib61850 to parse json and related data structure.
  * @param _filename Name of the JSON file to parse.
  */
-void _ACQ::printIPAddressesFromJson(const char *_filename)
+void _ACQ::parseIPAddressesFromJson(const char *_filename)
 {
     int lidxA = 0;
     const ST_CHAR *ps8configfile = "LUConfig.json";

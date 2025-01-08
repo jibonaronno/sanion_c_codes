@@ -111,7 +111,7 @@ class _PDDAU
     _PDDAU(void);
     int getAmplification(int channel, int sockfd, MSG_RF_INFO_PACKET *msg_rf_info_packet);
     int setAmplification(int channel, int sockfd, MSG_RF_INFO_PACKET *msg_rf_info_packet);
-    void printIPAddressesFromJson(const char *_filename);
+    void parseIPAddressesFromJson(const char *_filename);
 
     int pddau_index;
     char ip_address[16];

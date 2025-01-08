@@ -270,7 +270,7 @@ class _ACQ
         int readPhaseBCurr(void);
         int readPhaseCCurr(void);
         int readInitiateAndContact(void);
-        void printIPAddressesFromJson(const char *_filename);
+        void parseIPAddressesFromJson(const char *_filename);
 
         modbus_t *busA;
         bool_type is_modbus_opened;

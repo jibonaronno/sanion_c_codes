@@ -509,10 +509,10 @@ void saveIntoRamFs(char *filename)
 #define DEV_FACTOR	230.0 // 279.0 before
 #define OFFSET_FACTOR 71.91
 
-#define SVFILE1() sprintf(filename, "/COMTRADE/REALTIME/PDCM/01_00_%s.dat", time_string)
-#define SVFILE2() sprintf(filename, "/COMTRADE/REALTIME/PDCM/02_00_%s.dat", time_string)
-#define SVFILE3() sprintf(filename, "/COMTRADE/REALTIME/PDCM/03_00_%s.dat", time_string)
-#define SVFILE4() sprintf(filename, "/COMTRADE/REALTIME/PDCM/04_00_%s.dat", time_string)
+#define SVFILE1() sprintf(filename, "/data/COMTRADE/REALTIME/PDCM/01_10_%s.dat", time_string)
+#define SVFILE2() sprintf(filename, "/data/COMTRADE/REALTIME/PDCM/02_10_%s.dat", time_string)
+#define SVFILE3() sprintf(filename, "/data/COMTRADE/REALTIME/PDCM/03_10_%s.dat", time_string)
+#define SVFILE4() sprintf(filename, "/data/COMTRADE/REALTIME/PDCM/04_10_%s.dat", time_string)
 
 #define QUEUE_SIZE_THR		2
 
@@ -556,6 +556,8 @@ void* ProcessPDDataThread(void *params)
 
 		dsUTCTime = g_ds61850SharedMem.dsArmDestUTC;
     	current_time = (time_t)dsUTCTime.secs;
+		// Add 9 hours (in seconds) to convert UTC to UTC+9
+		current_time += 9 * 3600;		
     	time_info = gmtime(&current_time);
     	strftime(time_string, sizeof(time_string), "%Y%m%d%H%M%S", time_info);
 
@@ -1326,12 +1328,12 @@ void* RunPDDAU(void *params)
 	//char *ipaddress = "192.168.246.143";
 	char ipaddress[16];
 	#ifdef CPP_BLOCK_ENABLED
-	Pddau.printIPAddressesFromJson("LUConfig.json");
-	strcpy(ipaddress, Pddau.ip_address);
+	//Pddau.parseIPAddressesFromJson("LUConfig.json");
+	//strcpy(ipaddress, Pddau.ip_address);
 	#else
 	strcpy(ipaddress, "192.168.246.143");
 	#endif
-	
+	strcpy(ipaddress, "192.168.246.143");	
 	char matchedKey[200];
 	struct in_addr ip_addr;
 	ip_addr.s_addr = htonl(g_ds61850SharedMem.dsDeviceInfo.dsNetWorkCfg[2].m_u32IPAddr);
@@ -1374,7 +1376,7 @@ void* RunPDDAU(void *params)
 	    }
 	    else
 		{
-	        ; //// printf("sensor Socket successfully created.. \n");
+	        printf("sensor Socket successfully created.. \n");
 		}
 	    bzero(&servaddr, sizeof(servaddr));
 		
@@ -1628,8 +1630,10 @@ void* subsystem_thread(void *params)
 #ifdef CPP_BLOCK_ENABLED
 	_ACQ Acq;
 	// _PDDAU Pddau;
-	Acq.printIPAddressesFromJson("LUConfig.json");
-	Pddau.printIPAddressesFromJson("LUConfig.json");
+	#ifdef ISPDASYSTEM
+	Acq.parseIPAddressesFromJson("LUConfig.json");
+	Pddau.parseIPAddressesFromJson("LUConfig.json");
+	#endif
 #endif
 
 	int flag_recs = 0;
@@ -1689,19 +1693,19 @@ void* subsystem_thread(void *params)
 	{
 		SearchLeafsX("SBSH", &sbsh_leaflist[0]);
 		SearchLeafsX("SPDC", &spdc_leaflist[0]);
+		SearchLeafsX("SLTC", &oltc_leaflist[0]);
+		SearchLeafsX("SIML", &siml_leaflist[0]);
 
 		PrintLeafs(&sbsh_leaflist[0]);
 	}
 	else
 	{
 		SearchLeafsX("SCBR", &scbr_leaflist[0]);
-		SearchLeafsX("SLTC", &oltc_leaflist[0]);
-		SearchLeafsX("SIML", &siml_leaflist[0]);
 		SearchLeafsX("SPDC", &spdc_leaflist[0]);
 
 		PrintLeafs(&scbr_leaflist[0]);
 	}
-	
+		
 	SbshSensorCollect();
 	
 	while(1)

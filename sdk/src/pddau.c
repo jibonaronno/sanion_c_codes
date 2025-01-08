@@ -220,7 +220,7 @@ _PDDAU::_PDDAU(void)
 /**
  * Print the IP Address of the PDDAU.
  */
-void _PDDAU::printIPAddressesFromJson(const char *_filename)
+void _PDDAU::parseIPAddressesFromJson(const char *_filename)
 {
     int lidxA = 0;
     const ST_CHAR *ps8configfile = "LUConfig.json";

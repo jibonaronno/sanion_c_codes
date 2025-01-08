@@ -48,7 +48,7 @@ void save_oltc_file(struct tm *tmm)
     memcpy(oltc_file_data.samplesC, oct3, DATA_QUEUE_SIZE);
 
     strftime(time_string, sizeof(time_string), "%Y%m%d%H%M%S", tmm);
-    sprintf(filename, "/COMTRADE/01_40_%s%03d.dat", time_string, 111);
+    sprintf(filename, "/data/COMTRADE/01_40_%s%03d.dat", time_string, 111);
 	printf("--time string : %s\n", time_string);
     printf("--tmm->hour : %d\n", tmm->tm_hour);
 
